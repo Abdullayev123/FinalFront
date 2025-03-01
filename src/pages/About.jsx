@@ -28,7 +28,9 @@ const About = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/cars");
+        const response = await fetch(
+          "https://finalback-k90r.onrender.com/cars"
+        );
         const data = await response.json();
         setData(data.sort(() => Math.random() - 0.5)); // Shuffle inline
       } catch (error) {

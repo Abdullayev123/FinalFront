@@ -174,7 +174,7 @@ const About = () => {
           {/* We're building a cube-mapped environment declaratively.
           Anything you put in here will be filmed (once) by a cubemap-camera
           and applied to the scenes environment, and optionally background. */}
-          <Environment resolution={1024}>
+          <Environment resolution={512}>
             {/* Ceiling */}
             <Lightformer
               intensity={2}

@@ -2,7 +2,6 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { CursorContext } from "../components/context/CursorProvider";
 import InnerImageZoom from "react-inner-image-zoom";
-import gsap from "gsap";
 
 const AllCars = () => {
   const [data, setData] = useState([]);
@@ -20,7 +19,7 @@ const AllCars = () => {
       try {
         // Tüm arabaları tek bir istekle çek
         const response = await fetch(
-          `http://localhost:3000/cars/search?${brand}`
+          `https://finalback-k90r.onrender.com/cars/search?${brand}`
         );
         const carsData = await response.json();
 

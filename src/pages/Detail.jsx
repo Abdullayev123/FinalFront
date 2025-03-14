@@ -24,7 +24,7 @@ const Detail = () => {
     setIsLoading(true);
     setError(null);
 
-    fetch(`https://finalback-k90r.onrender.com/cars/${id}`)
+    fetch(`https://finalback-6lij.onrender.com/cars/${id}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Car data could not be fetched");

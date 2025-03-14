@@ -19,7 +19,7 @@ const AllCars = () => {
       try {
         // Tüm arabaları tek bir istekle çek
         const response = await fetch(
-          `https://finalback-k90r.onrender.com/cars/search?${brand}`
+          `https://finalback-6lij.onrender.com/cars/search?${brand}`
         );
         const carsData = await response.json();
 

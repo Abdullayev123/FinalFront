@@ -8,7 +8,7 @@ import {
 } from "react";
 import { Link } from "react-router-dom";
 import { LoadingContext } from "../context/LoadingProvider";
-import { CursorContext } from "../context/CursorProvider";
+// import { CursorContext } from "../context/CursorProvider";
 
 const Cars = () => {
   const [data, setData] = useState([]);
@@ -19,7 +19,7 @@ const Cars = () => {
   // loading context
   const { loading } = useContext(LoadingContext);
   // Context for mouse cursor size
-  const { setCursorsize } = useContext(CursorContext);
+  // const { setCursorsize } = useContext(CursorContext);
   // 🛠️ Use Refs for GSAP Animations
   const carImageRef = useRef(null);
   const brandLinksRef = useRef([]);
@@ -28,7 +28,7 @@ const Cars = () => {
   // 🛠️ Fetch Data Safely
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("https://finalback-k90r.onrender.com/home");
+      const res = await fetch("http://localhost:3000/home");
       const data = await res.json();
       setData(data);
     };
@@ -84,14 +84,14 @@ const Cars = () => {
                     onMouseEnter={() => {
                       setActiveBrand(car.brand);
                       setImage(car.image);
-                      setCursorsize({ cursorWidth: 80, cursorHeight: 80 });
+                      //   setCursorsize({ cursorWidth: 80, cursorHeight: 80 });
                     }}
-                    onMouseLeave={() => {
-                      setCursorsize({ cursorWidth: 30, cursorHeight: 30 });
-                    }}
-                    onClick={() => {
-                      setCursorsize({ cursorWidth: 30, cursorHeight: 30 });
-                    }}
+                    // onMouseLeave={() => {
+                    //   setCursorsize({ cursorWidth: 30, cursorHeight: 30 });
+                    // }}
+                    // onClick={() => {
+                    //   setCursorsize({ cursorWidth: 30, cursorHeight: 30 });
+                    // }}
                   >
                     {car.brand}
                   </Link>
@@ -102,7 +102,7 @@ const Cars = () => {
 
         <div
           id="car-image-container"
-          className="h-screen w-full fixed z-[-1] left-0 top-0 bg-black"
+          className="h-screen w-full fixed z-[-1] left-0 top-0 bg-[#111]"
         >
           <img
             ref={carImageRef}
@@ -113,16 +113,16 @@ const Cars = () => {
         </div>
         <div
           id="top-gradient"
-          className="fixed top-0 left-0 w-full h-30 bg-black hidden md:block"
+          className="fixed top-0 left-0 w-full h-30 bg-[#111] hidden md:block"
         />
         <div
           id="bottom-gradient"
-          className="fixed bottom-0 left-0 w-full h-20 bg-black hidden md:block"
+          className="fixed bottom-0 left-0 w-full h-20 bg-[#111] hidden md:block"
         />
       </div>
 
       {/* MOBILE VIEW */}
-      <div className="grid w-full grid-cols-1 sm:grid-cols-2 md:hidden bg-black py-[100px]">
+      <div className="grid w-full grid-cols-1 sm:grid-cols-2 md:hidden bg-[#111] py-[100px]">
         {data.length > 0 &&
           data.map((car) => (
             <div key={car._id} className="text-white hover:text-[#fff] p-3">

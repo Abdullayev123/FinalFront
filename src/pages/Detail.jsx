@@ -24,7 +24,7 @@ const Detail = () => {
     setIsLoading(true);
     setError(null);
 
-    fetch(`https://finalback-k90r.onrender.com/cars/${id}`)
+    fetch(`http://localhost:3000/cars/${id}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Car data could not be fetched");
@@ -76,7 +76,7 @@ const Detail = () => {
           <p className="text-red-500 text-xl">{error}</p>
         </div>
       ) : (
-        <div className="py-[50px] md:py-[150px] px-4 bg-[#000]">
+        <div className="py-[50px] md:py-[150px] px-4 bg-[#111]">
           <BackButton />
           <div id="detail-hero">
             <h1 className="text-white text-[18px] sm:text-[28px] md:text-[3rem] pt-5 font-bold">
@@ -87,31 +87,33 @@ const Detail = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 py-10">
               {data.modelImage &&
                 data.modelImage.map((img, i) => (
-                  <img
-                    key={i}
-                    src={img}
-                    alt=""
-                    className="object-cover h-full cursor-pointer transition-transform duration-300 hover:scale-105"
-                    onClick={() => {
-                      setImage(img);
-                      setIsOpen(!isOpen);
-                      setText("Exterior");
-                    }}
-                  />
+                  <div key={i} className="overflow-hidden">
+                    <img
+                      src={img}
+                      alt=""
+                      className="object-cover h-full cursor-pointer transition-transform duration-500 hover:scale-105"
+                      onClick={() => {
+                        setImage(img);
+                        setIsOpen(!isOpen);
+                        setText("Exterior");
+                      }}
+                    />
+                  </div>
                 ))}
               {data.modelInterior &&
                 data.modelInterior.map((img, i) => (
-                  <img
-                    key={i}
-                    src={img}
-                    alt=""
-                    className="object-cover h-full cursor-pointer transition-transform duration-300 hover:scale-105"
-                    onClick={() => {
-                      setImage(img);
-                      setIsOpen(!isOpen);
-                      setText("Interior");
-                    }}
-                  />
+                  <div key={i} className="overflow-hidden">
+                    <img
+                      src={img}
+                      alt=""
+                      className="object-cover h-full cursor-pointer transition-transform duration-300 hover:scale-105"
+                      onClick={() => {
+                        setImage(img);
+                        setIsOpen(!isOpen);
+                        setText("Interior");
+                      }}
+                    />
+                  </div>
                 ))}
             </div>
           </div>

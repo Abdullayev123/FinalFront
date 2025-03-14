@@ -25,7 +25,7 @@ const Cursor = () => {
       y,
       xPercent: -50,
       yPercent: -50,
-      duration: 0.5,
+      // duration: 0.5,
       ease: Expo,
     });
   };
@@ -47,9 +47,8 @@ const Cursor = () => {
     <>
       <div
         ref={cursor}
-        className={`hidden lg:block w-[30px] h-[30px] fixed z-[999] rounded-full bg-white mix-blend-difference lg:pointer-events-none 
-`}
-      ></div>
+        className={`hidden lg:block w-[30px] h-[30px] fixed z-[999] rounded-full bg-[#fff] mix-blend-difference lg:pointer-events-none`}
+      />
     </>
   );
 };

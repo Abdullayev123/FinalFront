@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { CursorContext } from "../components/context/CursorProvider";
 import InnerImageZoom from "react-inner-image-zoom";
-import PageTransition from "../components/config/PageTransition";
+import gsap from "gsap";
 
 const AllCars = () => {
   const [data, setData] = useState([]);
@@ -20,7 +20,7 @@ const AllCars = () => {
       try {
         // Tüm arabaları tek bir istekle çek
         const response = await fetch(
-          `https://finalback-k90r.onrender.com/cars/search?${brand}`
+          `http://localhost:3000/cars/search?${brand}`
         );
         const carsData = await response.json();
 
@@ -46,13 +46,8 @@ const AllCars = () => {
 
   return (
     <>
-      {/* <PageTransition> */}
       <div id="overlay" className="flex">
         <div className="pt-[100px] md:pt-[200px] text-white md:w-[30%] xl:w-[20%]">
-          {/* <h1 className="text-[28px] text-white mb-1 md:pl-[40px]">
-              (All Cars)
-            </h1> */}
-
           <div
             ref={cars}
             className="grid grid-cols-1 sm:grid-cols-2 md:flex md:flex-col gap-2 pt-[20px] md:py-[100px] px-2 md:pl-10"
@@ -61,7 +56,7 @@ const AllCars = () => {
               <Link
                 key={data._id}
                 to={`/allcars/${data.brand.toLowerCase()}/detail/${data._id}`}
-                className="w-full h-full"
+                className="w-full h-full cards"
                 onMouseEnter={() => {
                   setCursorsize({ cursorWidth: 80, cursorHeight: 80 });
                 }}
@@ -73,7 +68,7 @@ const AllCars = () => {
                 }}
               >
                 <div
-                  className="border-2 flex flex-col gap-[70px] border-white/10 p-3 bg-[black]"
+                  className="border-2 flex flex-col gap-[70px] border-white/10 p-3 bg-[#111]"
                   onMouseEnter={() => setImage(data.modelImage[0])}
                 >
                   <img
@@ -105,7 +100,6 @@ const AllCars = () => {
           <img src={image} alt="" className="w-full h-full object-cover" />
         </div>
       </div>
-      {/* </PageTransition> */}
     </>
   );
 };

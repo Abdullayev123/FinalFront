@@ -1,11 +1,22 @@
-import Cars from "../components/home/Cars";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import { useGSAP } from "@gsap/react";
 
-const Home = () => {
+import InfoSection from "../components/home/InfoSection";
+import SelectWe from "../components/home/SelectWe";
+import Marque from "../components/home/Marque";
+import Hero from "../components/home/Hero";
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+const About = () => {
   return (
     <>
-      <Cars />
+      <Hero />
+      <InfoSection />
+      <SelectWe />
+      <Marque />
     </>
   );
 };
 
-export default Home;
+export default About;

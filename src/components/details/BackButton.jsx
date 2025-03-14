@@ -28,7 +28,7 @@ const BackButton = () => {
 
   return (
     <button
-      className="px-6 py-1 bg-white text-black font-bold text-2xl flex items-center gap-3 cursor-pointer"
+      className="px-6 py-1 bg-white text-[#111] font-bold text-2xl flex items-center gap-3 cursor-pointer"
       onMouseEnter={() => {
         setCursorsize({ cursorWidth: 80, cursorHeight: 80 });
         setIsHover(true);

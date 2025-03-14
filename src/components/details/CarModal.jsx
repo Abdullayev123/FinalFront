@@ -42,7 +42,7 @@ const CarModal = ({ isOpen, setIsOpen, image, text }) => {
   return (
     <div
       id="modal"
-      className="w-full h-screen bg-[#000] fixed z-[999] top-0 left-0 flex md:flex-row flex-col items-center justify-between transition-all pb-[150px] md:pb-[0] "
+      className="w-full h-screen bg-[#111] fixed z-[999] top-0 left-0 flex md:flex-row flex-col items-center justify-between transition-all pb-[150px] md:pb-[0] "
     >
       <div className="h-full">
         <div className="overflow-hidden">

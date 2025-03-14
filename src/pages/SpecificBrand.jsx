@@ -11,7 +11,7 @@ const SpecificBrand = () => {
 
   const cars = useRef();
   useEffect(() => {
-    fetch(`https://finalback-k90r.onrender.com/cars/search?brand=${brand}`)
+    fetch(`http://localhost:3000/cars/search?brand=${brand}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -22,7 +22,6 @@ const SpecificBrand = () => {
 
   return (
     <>
-      {/* <PageTransition> */}
       <div id="overlay" className="flex ">
         <div className="pt-[100px] md:pt-[200px]  text-white min-h-screen  md:w-[30%] xl:w-[20%]">
           <h1 className="text-[28px] text-white mb-1 md:pl-[40px]">(cars)</h1>
@@ -59,7 +58,7 @@ const SpecificBrand = () => {
                   >
                     <div
                       key={data._id}
-                      className="border-2 flex flex-col gap-[70px] border-white/10 p-3 bg-black"
+                      className="border-2 flex flex-col gap-[70px] border-white/10 p-3 bg-[#111]"
                       onMouseEnter={() => setImage(data.modelImage[0])}
                     >
                       <img
@@ -92,7 +91,6 @@ const SpecificBrand = () => {
           <img src={image} alt="" className="w-full h-full object-cover" />
         </div>
       </div>
-      {/* </PageTransition> */}
     </>
   );
 };

@@ -39,12 +39,12 @@ const Loading = () => {
     <>
       <div
         id="loading"
-        className=" fixed  top-0 left-0 bg-white w-full h-screen overflow-hidden z-[9999] transition-all duration-[1.25s]"
+        className=" fixed  top-0 left-0 bg-white w-full h-screen overflow-hidden z-[998] transition-all duration-[1.25s]"
       >
         <div id="myLoad" className="w-full h-screen overflow-hidden relative">
           <div
             id="trig"
-            className=" bg-[#020a11] absolute bottom-0 left-0 h-0 w-2"
+            className=" bg-[#111] absolute bottom-0 left-0 h-0 w-2"
           ></div>
           <div
             id="zeroToHundOverlay"
@@ -52,7 +52,7 @@ const Loading = () => {
           >
             <h1
               id="zeroToHundOverlayItem"
-              className="text-[#020a11] text-7xl md:text-[6rem] font-extrabold"
+              className="text-[#111] text-7xl md:text-[6rem] font-extrabold"
             >
               {progress * 100}%
             </h1>

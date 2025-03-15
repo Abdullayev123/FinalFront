@@ -11,7 +11,7 @@ const SpecificBrand = () => {
 
   const cars = useRef();
   useEffect(() => {
-    fetch(`https://finalback-6lij.onrender.com/cars/search?brand=${brand}`)
+    fetch(`http://localhost:3000/cars/search?brand=${brand}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);

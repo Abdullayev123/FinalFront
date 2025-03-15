@@ -28,7 +28,7 @@ const Cars = () => {
   // 🛠️ Fetch Data Safely
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("https://finalback-6lij.onrender.com/home");
+      const res = await fetch("http://localhost:3000/home");
       const data = await res.json();
       setData(data);
     };

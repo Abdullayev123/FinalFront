@@ -11,9 +11,7 @@ const SelectWe = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          "https://finalback-6lij.onrender.com/cars"
-        );
+        const response = await fetch("http://localhost:3000/cars");
         const data = await response.json();
         setData(data.sort(() => Math.random() - 0.5)); // Shuffle inline
       } catch (error) {

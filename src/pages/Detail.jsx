@@ -24,7 +24,7 @@ const Detail = () => {
     setIsLoading(true);
     setError(null);
 
-    fetch(`https://finalback-6lij.onrender.com/cars/${id}`)
+    fetch(`http://localhost:3000/cars/${id}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Car data could not be fetched");
@@ -73,7 +73,7 @@ const Detail = () => {
         </div>
       ) : error ? (
         <div className="h-screen flex justify-center items-center">
-          <p className="text-red-500 text-xl">{error}</p>
+          <p className="text-white text-xl">{error}</p>
         </div>
       ) : (
         <div className="py-[50px] md:py-[150px] px-4 bg-[#111]">
